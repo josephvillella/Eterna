@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Eterna Salon and Day Spa</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <link href="css/codiqa.ext.min.css" rel="stylesheet">
+  <link href="css/sand.css" rel="stylesheet">
+
+  <script src="js/jquery-1.9.1.min.js"></script>
+  <script src="js/jquery.mobile-1.3.1.min.js"></script>
+  <script src="js/codiqa.ext.min.js"></script>
+  <script src="cordova.js"></script>
+  <script src="js/eterna-salon-and-day-spa.js"></script>
+</head>
+<body>
+  <div data-role="page" data-control-title="Home" id="page1" style="background: url('img/ios_default_bg_tile.jpg') repeat">
+      <div data-theme="" data-role="header">
+          <h3>
+              Home
+          </h3>
+      </div>
+      <div data-role="content">
+          <div style=" text-align:center" data-controltype="image">
+              <img style="width: 90px; height: 130px" src="img/logo.png">
+          </div>
+          <div data-controltype="textblock">
+              <h1 style="text-align: center;" data-mce-style="text-align: center;">
+                  <b>
+                      <span style="font-size: small;" data-mce-style="font-size: small;">
+                          Welcome to Eterna Salon &amp; Day Spa!
+                      </span>
+                      <br>
+                  </b>
+              </h1>
+          </div>
+          <div style=" text-align:center" data-controltype="image">
+              <img style="width: 250px; height: 150px" src="img/store.png">
+          </div>
+          <div data-controltype="textblock">
+              <p style="text-align: center;" data-mce-style="text-align: center;">
+                  <em>
+                      <span data-mce-style="font-size: small;" style="font-size: small;">
+                          Use the navigation tools below.
+                      </span>
+                  </em>
+              </p>
+          </div>
+      </div>
+      <div data-role="tabbar" data-iconpos="top" data-theme="a">
+          <ul>
+              <li>
+                  <a href="#page1" data-transition="fade" data-theme="" data-icon="home">
+                      Home
+                  </a>
+              </li>
+              <li>
+                  <a href="#page4" data-transition="fade" data-theme="" data-icon="star">
+                      Services
+                  </a>
+              </li>
+              <li>
+                  <a href="#page5" data-transition="fade" data-theme="" data-icon="search">
+                      Location
+                  </a>
+              </li>
+              <li>
+                  <a href="#page6" data-transition="fade" data-theme="" data-icon="bars">
+                      More
+                  </a>
+              </li>
+          </ul>
+      </div>
+  </div>
+  <div data-role="page" data-control-title="Services" id="page4" style="background: url('img/ios_default_bg_tile.jpg') repeat">
+      <div data-theme="" data-role="header">
+          <h3>
+              Services
+          </h3>
+      </div>
+      <div data-role="content">
+      </div>
+      <div data-role="tabbar" data-iconpos="top" data-theme="a">
+          <ul>
+              <li>
+                  <a href="#page1" data-transition="fade" data-theme="" data-icon="home">
+                      Home
+                  </a>
+              </li>
+              <li>
+                  <a href="#page4" data-transition="fade" data-theme="" data-icon="star">
+                      Services
+                  </a>
+              </li>
+              <li>
+                  <a href="#page5" data-transition="fade" data-theme="" data-icon="search">
+                      Location
+                  </a>
+              </li>
+              <li>
+                  <a href="#page6" data-transition="fade" data-theme="" data-icon="bars">
+                      More
+                  </a>
+              </li>
+          </ul>
+      </div>
+  </div>
+  <div data-role="page" data-control-title="Location" id="page5" style="background: url('img/ios_default_bg_tile.jpg') repeat">
+      <div data-theme="" data-role="header">
+          <h3>
+              Location
+          </h3>
+      </div>
+      <div data-role="content">
+          <div style=" text-align:center" data-controltype="image">
+              <img style="width: 60px; height: 80px" src="img/logo.png">
+          </div>
+          <hr style="height:3px; background-color:#fff; border:0; margin-top:12px; margin-bottom:12px;">
+          <div id="googlemapsjs1" class="google-map" style="width: 288px; height: 200px; margin-left: auto; margin-right: auto">
+          </div>
+          <script type="text/javascript">
+                  window.CodiqaControls && window.CodiqaControls.register('googlemaps', 'googlemapsjs1', {
+              ready: function(control) {
+  
+                  control.options = {
+                      zoom: 14,
+                      mapTypeId: google.maps.MapTypeId.ROADMAP
+                  };
+  
+                  control.el = document.getElementById(control._id);
+                  control.map = new google.maps.Map(control.el, control.options);
+  
+                  var geocoder = new google.maps.Geocoder();
+                  geocoder.geocode({
+                      'address': 'Unit 128, 9855 Austin Avenue Burnaby, BC, V3J 1N4'
+                  }, function(results, status) {
+                      if (status == google.maps.GeocoderStatus.OK) {
+  
+                          var marker = new google.maps.Marker({
+                              map: control.map,
+                              position: results[0].geometry.location
+                          });
+                          control.center = results[0].geometry.location;
+                          control.map.setCenter(control.center);
+                      }
+                  });
+  
+              }
+          });
+          </script>
+          <div data-controltype="textblock">
+              <p style="text-align: center;">
+                  <b>
+                      Eterna Salon &amp; Day Spa
+                      <br>
+                  </b>
+              </p>
+              <p style="text-align: center;">
+                  <b>
+                      <span style="font-size: xx-small;" data-mce-style="font-size: xx-small;">
+                          9855 Austin Avenue -&nbsp;
+                          <span style="font-family: verdana,geneva;" data-mce-style="font-family: verdana,geneva;">
+                              Lougheed Town Centre -
+                              <a class="ui-link" href="http://maps.apple.com/?q=lougheed+mall+9855+austin+avenue+burnaby+bc+canada"
+                              data-mce-href="http://maps.apple.com/?q=lougheed+mall+9855+austin+avenue+burnaby+bc+canada">
+                                  Open in Maps
+                              </a>
+                          </span>
+                      </span>
+                  </b>
+              </p>
+              <p style="text-align: center;">
+                  <b>
+                      <span style="font-size: xx-small;" data-mce-style="font-size: xx-small;">
+                          <span style="font-family: verdana,geneva;" data-mce-style="font-family: verdana,geneva;">
+                              <a href="tel:6044444974" data-mce-href="tel:6044444974">
+                                  604.444.4974
+                              </a>
+                              <br>
+                          </span>
+                      </span>
+                  </b>
+              </p>
+          </div>
+          <hr style="height:3px; background-color:#fff; border:0; margin-top:12px; margin-bottom:12px;">
+          <div data-controltype="textblock">
+              <p>
+                  <span style="font-size: small;" data-mce-style="font-size: small;">
+                      <strong>
+                          Hours:
+                      </strong>
+                  </span>
+                  <br>
+                  <span style="font-size: x-small;" data-mce-style="font-size: x-small;">
+                      Monday &amp; Tuesday &nbsp;| &nbsp;10:00am - 6:00pm
+                  </span>
+                  <br>
+                  <span style="font-size: x-small;" data-mce-style="font-size: x-small;">
+                      Wednesday - Friday &nbsp;| &nbsp;10:00am - 9:00pm
+                  </span>
+                  <br>
+                  <span style="font-size: x-small;" data-mce-style="font-size: x-small;">
+                      Saturday &nbsp;| &nbsp;9:30am - 6:00pm
+                  </span>
+                  <br>
+                  <span style="font-size: x-small;" data-mce-style="font-size: x-small;">
+                      Sunday &amp; Holidays &nbsp;| &nbsp;11:00am - 6:00pm
+                  </span>
+              </p>
+          </div>
+          <hr style="height:3px; background-color:#fff; border:0; margin-top:12px; margin-bottom:12px;">
+          <div data-controltype="textblock">
+              <p>
+                  <span style="font-size: x-small;">
+                      <span class="style3">
+                          <span style="font-size: small;">
+                              <strong>
+                                  PARKING:
+                              </strong>
+                          </span>
+                          <br>
+                      </span>
+                      <span class="style2">
+                          For your convenience we are located in Lougheed Town Center in Burnaby.&nbsp;
+                          Ample parking surrounds the mall.
+                      </span>
+                  </span>
+              </p>
+          </div>
+      </div>
+      <div data-role="tabbar" data-iconpos="top" data-theme="a">
+          <ul>
+              <li>
+                  <a href="#page1" data-transition="fade" data-theme="" data-icon="home">
+                      Home
+                  </a>
+              </li>
+              <li>
+                  <a href="#page4" data-transition="fade" data-theme="" data-icon="star">
+                      Services
+                  </a>
+              </li>
+              <li>
+                  <a href="#page5" data-transition="fade" data-theme="" data-icon="search">
+                      Location
+                  </a>
+              </li>
+              <li>
+                  <a href="#page6" data-transition="fade" data-theme="" data-icon="bars">
+                      More
+                  </a>
+              </li>
+          </ul>
+      </div>
+  </div>
+  <div data-role="page" data-control-title="More" id="page6" style="background: url('img/ios_default_bg_tile.jpg') repeat">
+      <div data-theme="" data-role="header">
+          <h3>
+              More...
+          </h3>
+      </div>
+      <div data-role="content">
+          <div style=" text-align:center" data-controltype="image">
+              <img style="width: 60px; height: 80px" src="img/logo.png">
+          </div>
+          <ul data-role="listview" data-divider-theme="b" data-inset="true">
+              <li data-role="list-divider" role="heading">
+              </li>
+              <li data-theme="c">
+                  <a href="#page11" data-transition="slide">
+                      Kindly Note...
+                  </a>
+              </li>
+              <li data-theme="c">
+                  <a href="#page12" data-transition="slide">
+                      Gift Cards
+                  </a>
+              </li>
+              <li data-theme="c">
+                  <a href="#page9" data-transition="slide">
+                      About Us
+                  </a>
+              </li>
+              <li data-theme="c">
+                  <a href="#page8" data-transition="slide">
+                      Contact Us
+                  </a>
+              </li>
+              <li data-theme="c">
+                  <a href="#fb://133890803290998" data-transition="slide">
+                      Facebook
+                  </a>
+              </li>
+              <li data-theme="c">
+                  <a href="http://www.eternaspa.com/index.htm" data-transition="slide">
+                      Website
+                  </a>
+              </li>
+              <li data-theme="c">
+                  <a href="#page10" data-transition="slide">
+                      App Version
+                  </a>
+              </li>
+          </ul>
+      </div>
+      <div data-role="tabbar" data-iconpos="top" data-theme="a">
+          <ul>
+              <li>
+                  <a href="#page1" data-transition="fade" data-theme="" data-icon="home">
+                      Home
+                  </a>
+              </li>
+              <li>
+                  <a href="#page4" data-transition="fade" data-theme="" data-icon="star">
+                      Services
+                  </a>
+              </li>
+              <li>
+                  <a href="#page5" data-transition="fade" data-theme="" data-icon="search">
+                      Location
+                  </a>
+              </li>
+              <li>
+                  <a href="#page6" data-transition="fade" data-theme="" data-icon="bars">
+                      More
+                  </a>
+              </li>
+          </ul>
+      </div>
+  </div>
+  <div data-role="page" data-control-title="Kindly Note..." id="page11"
+  style="background: url('img/ios_default_bg_tile.jpg') repeat">
+      <div data-theme="" data-role="header">
+          <a data-role="button" href="#page6" class="ui-btn-left">
+              Back
+          </a>
+          <h3>
+              Kindly Note...
+          </h3>
+      </div>
+      <div data-role="content">
+          <div style=" text-align:center" data-controltype="image">
+              <img style="width: 60px; height: 80px" src="img/logo.png">
+          </div>
+          <div data-controltype="textblock">
+              <p>
+                  <span style="font-size: x-small;" data-mce-style="font-size: x-small;">
+                      <span class="style3">
+                      </span>
+                      <span class="style2">
+                          Our goal is to ensure you completely enjoy your time with us.&nbsp; You
+                          are the main ingredient in our services.
+                      </span>
+                  </span>
+              </p>
+              <p class="style2" align="left">
+                  <span style="font-size: x-small;" data-mce-style="font-size: x-small;">
+                      For your visit with us, please arrive 15 minutes prior to your appointment.
+                      This will allot enough time for a spa tour, changing into spa attire, and
+                      a consultation with your Spa Therapist. If you desire extra time to relax
+                      and unwind, you are welcomed to come earlier and enjoy a cup of Aveda 100%
+                      Organic Comforting Tea as you settle in.
+                  </span>
+              </p>
+              <p class="style2" align="left">
+                  <span style="font-size: x-small;" data-mce-style="font-size: x-small;">
+                      Your privacy and comfort are of the utmost importance to us. Spa treatments
+                      require various levels of undress. We assure our Spa Therapists are trained
+                      in appropriate methods of draping and we offer discreet spa robes and attire
+                      for your comfort. Although your therapist will discuss with you a complete
+                      overview of the treatment you will experience, please feel free to ask
+                      any appropriate questions or make special requests to ensure your own comfort
+                      level is achieved.
+                  </span>
+              </p>
+          </div>
+          <hr style="height:3px; background-color:#fff; border:0; margin-top:12px; margin-bottom:12px;">
+          <div data-controltype="textblock">
+              <p class="style2" align="left">
+                  <span class="style3">
+                      <span style="font-size: x-small;">
+                          <strong>
+                              PARENTAL COURTESY / COURTESY OF OTHERS:
+                          </strong>
+                      </span>
+                      <br>
+                      <br>
+                  </span>
+                  <span style="font-size: x-small;" class="style2" data-mce-style="font-size: x-small;">
+                      A Spa environment is one that is relaxing and serene. We kindly ask that
+                      parents please make child care arrangements prior to your spa appointments
+                      -unless a child is receiving a spa treatment.&nbsp; Child care will not
+                      be available.&nbsp;
+                  </span>
+              </p>
+              <p>
+                  <span style="font-size: x-small;" data-mce-style="font-size: x-small;">
+                      We ask that all guests please turn off cell phones, pagers, computers
+                      and any other devices that may interfere with the serenity of fellow guests.
+                  </span>
+                  <br>
+              </p>
+          </div>
+          <hr style="height:3px; background-color:#fff; border:0; margin-top:12px; margin-bottom:12px;">
+          <div data-controltype="textblock">
+              <p>
+                  <span style="font-size: x-small;">
+                      <strong>
+                          HEALTH CONCERNS:
+                          <br>
+                          <br>
+                      </strong>
+                      Please advise us of any medical conditions or health related issues that
+                      may interfere with your treatment.
+                  </span>
+              </p>
+          </div>
+          <hr style="height:3px; background-color:#fff; border:0; margin-top:12px; margin-bottom:12px;">
+          <div data-controltype="textblock">
+              <p>
+                  <span style="font-size: x-small;">
+                      <span class="style3">
+                          <strong>
+                              BOOKINGS AND CANCELLATIONS:
+                          </strong>
+                          <br>
+                          <br>
+                      </span>
+                      <span class="style2">
+                          We ask that you give us 24 hours notice if you need to cancel your appointment.
+                      </span>
+                  </span>
+              </p>
+          </div>
+          <hr style="height:3px; background-color:#fff; border:0; margin-top:12px; margin-bottom:12px;">
+          <div data-controltype="textblock">
+              <p style="text-align: center;">
+                  <b>
+                      <em>
+                          Thank You!
+                      </em>
+                      <br>
+                  </b>
+              </p>
+          </div>
+      </div>
+      <div data-role="tabbar" data-iconpos="top" data-theme="a">
+          <ul>
+              <li>
+                  <a href="#page1" data-transition="fade" data-theme="" data-icon="home">
+                      Home
+                  </a>
+              </li>
+              <li>
+                  <a href="#page4" data-transition="fade" data-theme="" data-icon="star">
+                      Services
+                  </a>
+              </li>
+              <li>
+                  <a href="#page5" data-transition="fade" data-theme="" data-icon="search">
+                      Location
+                  </a>
+              </li>
+              <li>
+                  <a href="#page6" data-transition="fade" data-theme="" data-icon="bars">
+                      More
+                  </a>
+              </li>
+          </ul>
+      </div>
+  </div>
+  <div data-role="page" data-control-title="Gift Cards" id="page12" style="background: url('img/ios_default_bg_tile.jpg') repeat">
+      <div data-theme="" data-role="header">
+          <a data-role="button" href="#page6" class="ui-btn-left">
+              Back
+          </a>
+          <h3>
+              Gift Cards
+          </h3>
+      </div>
+      <div data-role="content">
+          <div style=" text-align:center" data-controltype="image">
+              <img style="width: 250px; height: 160px" src="img/giftcard.jpg">
+          </div>
+          <div data-controltype="textblock">
+              <p>
+                  <span style="font-size: x-small;">
+                      If you have enjoyed your experience with us and would like to share it
+                      with others, we offer Eterna Gift Cards from $25. The referral of your
+                      friends and family is the largest compliment of all.
+                  </span>
+              </p>
+              <p class="style2">
+                  <span style="font-size: x-small;">
+                      In the event that a Gift Card was purchased for a service that is no longer
+                      offered on Eterna Salon &amp; Day Spa’s menu, the denomination in which
+                      the Gift Card was originally purchased for is still valid towards other
+                      services or retail items. There are absolutely no cash refunds for Gift
+                      Cards under any circumstances.
+                  </span>
+              </p>
+              <p class="style2">
+                  <span style="font-size: x-small;">
+                      Please contact us to purchase gift cards.
+                  </span>
+              </p>
+          </div>
+      </div>
+      <div data-role="tabbar" data-iconpos="top" data-theme="a">
+          <ul>
+              <li>
+                  <a href="#page1" data-transition="fade" data-theme="" data-icon="home">
+                      Home
+                  </a>
+              </li>
+              <li>
+                  <a href="#page4" data-transition="fade" data-theme="" data-icon="star">
+                      Services
+                  </a>
+              </li>
+              <li>
+                  <a href="#page5" data-transition="fade" data-theme="" data-icon="search">
+                      Location
+                  </a>
+              </li>
+              <li>
+                  <a href="#page6" data-transition="fade" data-theme="" data-icon="bars">
+                      More
+                  </a>
+              </li>
+          </ul>
+      </div>
+  </div>
+  <div data-role="page" data-control-title="About Us" id="page9" style="background: url('img/ios_default_bg_tile.jpg') repeat">
+      <div data-theme="" data-role="header">
+          <a data-role="button" href="#page6" class="ui-btn-left">
+              Back
+          </a>
+          <h3>
+              About Us
+          </h3>
+      </div>
+      <div data-role="content">
+          <div style=" text-align:center" data-controltype="image">
+              <img style="width: 60px; height: 80px" src="img/logo.png">
+          </div>
+          <div data-controltype="textblock">
+              <p class="style2" align="left">
+                  <span style="font-size: x-small;">
+                      At ETERNA, it is our MISSION to use natural, pure beauty products in a
+                      relaxing environment to help our clients achieve a sense of calm and well
+                      being while providing exemplary service. We will continually share new
+                      ideas and concepts with our guests, fellow stylists and estheticians to
+                      verify our standing as creative leaders in unsurpassed in excellence. Our
+                      daily goal is to have each guest describe Eterna Salon and Day Spa as beyond
+                      compare. Our daily goal is to have each guest describe Eterna Salon and
+                      Day Spa as beyond compare.
+                  </span>
+              </p>
+              <p class="style2" align="left">
+                  <span style="font-size: x-small;">
+                      Eterna Salon &amp; Day Spa (Since 2005) is an Aveda Concept Salon. We
+                      take pride in using Aveda’s rich, organic plant and flower essence infused
+                      products. This, along with our knowledgeable, creative staff and our commitment
+                      to excellence in service has made us noted leaders in the hair and beauty
+                      industry.
+                  </span>
+              </p>
+          </div>
+          <div style=" text-align:center" data-controltype="image">
+              <img style="width: 100px; height: 150px" src="img/front.png">
+          </div>
+      </div>
+      <div data-role="tabbar" data-iconpos="top" data-theme="a">
+          <ul>
+              <li>
+                  <a href="#page1" data-transition="fade" data-theme="" data-icon="home">
+                      Home
+                  </a>
+              </li>
+              <li>
+                  <a href="#page4" data-transition="fade" data-theme="" data-icon="star">
+                      Services
+                  </a>
+              </li>
+              <li>
+                  <a href="#page5" data-transition="fade" data-theme="" data-icon="search">
+                      Location
+                  </a>
+              </li>
+              <li>
+                  <a href="#page6" data-transition="fade" data-theme="" data-icon="bars">
+                      More
+                  </a>
+              </li>
+          </ul>
+      </div>
+  </div>
+  <div data-role="page" data-control-title="Contact Us" id="page8" style="background: url('img/ios_default_bg_tile.jpg') repeat">
+      <div data-theme="" data-role="header">
+          <a data-role="button" href="#page6" class="ui-btn-left">
+              Back
+          </a>
+          <h3>
+              Contact Us
+          </h3>
+      </div>
+      <div data-role="content">
+          <div style=" text-align:center" data-controltype="image">
+              <img style="width: 60px; height: 80px" src="img/logo.png">
+          </div>
+          <div data-controltype="textblock">
+              <p style="text-align: center;" data-mce-style="text-align: center;">
+                  <b style="font-size: small;" data-mce-style="font-size: small;">
+                      <span style="font-size: small;" data-mce-style="font-size: small;">
+                          <span style="font-size: medium;" data-mce-style="font-size: medium;">
+                              Eterna Salon &amp; Day Spa
+                          </span>
+                      </span>
+                  </b>
+                  <span data-mce-style="font-size: small;" style="font-size: small;">
+                  </span>
+              </p>
+              <p style="text-align: center;" data-mce-style="text-align: center;">
+                  <span data-mce-style="font-size: small;" style="font-size: small;">
+                      Lougheed Town Center
+                      <br>
+                      Unit 128, 9855 Austin Avenue
+                      <br>
+                  </span>
+                  <span data-mce-style="font-size: small;" style="font-size: small;">
+                      Burnaby, BC, V3J 1N4
+                  </span>
+                  <b>
+                      <span style="font-size: small;" data-mce-style="font-size: small;">
+                          <br>
+                          <br>
+                      </span>
+                  </b>
+              </p>
+              <p>
+                  <b>
+                      <span style="font-size: small;" data-mce-style="font-size: small;">
+                          Phone:
+                          <a href="tel:6044444974" data-mce-href="tel:6044444974">
+                              604.444.4974
+                          </a>
+                          <br>
+                      </span>
+                  </b>
+              </p>
+              <p>
+                  <b>
+                      <span style="font-size: small;" data-mce-style="font-size: small;">
+                          Website:
+                          <a href="http://www.eternaspa.com" data-mce-href="http://www.eternaspa.com">
+                              www.eternaspa.com
+                          </a>
+                          <br>
+                      </span>
+                  </b>
+              </p>
+              <p>
+                  <b>
+                      <span style="font-size: small;" data-mce-style="font-size: small;">
+                          Email:
+                          <a href="mailto:info@eternaspa.com" data-mce-href="mailto:info@eternaspa.com">
+                              info@eternaspa.com
+                          </a>
+                          <br>
+                      </span>
+                  </b>
+              </p>
+              <p>
+                  <b>
+                      <span style="font-size: small;" data-mce-style="font-size: small;">
+                          <span class="style2">
+                          </span>
+                      </span>
+                  </b>
+                  <span style="font-size: xx-small;" data-mce-style="font-size: xx-small;">
+                      <em>
+                          <span class="style2">
+                              Kindly note that Eterna does not book appointments via email. Please call
+                              us during business hours and we will gladly book a time that best suits
+                              your needs.
+                          </span>
+                      </em>
+                  </span>
+              </p>
+              <p>
+                  <span style="font-size: xx-small;" data-mce-style="font-size: xx-small;">
+                      <em>
+                          <span class="style2">
+                              <br>
+                          </span>
+                      </em>
+                  </span>
+              </p>
+          </div>
+      </div>
+      <div data-role="tabbar" data-iconpos="top" data-theme="a">
+          <ul>
+              <li>
+                  <a href="#page1" data-transition="fade" data-theme="" data-icon="home">
+                      Home
+                  </a>
+              </li>
+              <li>
+                  <a href="#page4" data-transition="fade" data-theme="" data-icon="star">
+                      Services
+                  </a>
+              </li>
+              <li>
+                  <a href="#page5" data-transition="fade" data-theme="" data-icon="search">
+                      Location
+                  </a>
+              </li>
+              <li>
+                  <a href="#page6" data-transition="fade" data-theme="" data-icon="bars">
+                      More
+                  </a>
+              </li>
+          </ul>
+      </div>
+  </div>
+  <div data-role="page" data-control-title="App Version" id="page10" style="background: url('img/ios_default_bg_tile.jpg') repeat">
+      <div data-theme="" data-role="header">
+          <a data-role="button" href="#page6" class="ui-btn-left">
+              Back
+          </a>
+          <h3>
+              App Version
+          </h3>
+      </div>
+      <div data-role="content">
+          <div style=" text-align:center" data-controltype="image">
+              <img style="width: 60px; height: 80px" src="img/logo.png">
+          </div>
+          <div data-role="collapsible-set">
+              <div data-role="collapsible">
+                  <h3>
+                      1.00 (Current Version)
+                  </h3>
+                  <div data-controltype="textblock">
+                      <p>
+                          - Initial Release
+                          <br>
+                      </p>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div data-role="tabbar" data-iconpos="top" data-theme="a">
+          <ul>
+              <li>
+                  <a href="#page1" data-transition="fade" data-theme="" data-icon="home">
+                      Home
+                  </a>
+              </li>
+              <li>
+                  <a href="#page4" data-transition="fade" data-theme="" data-icon="star">
+                      Services
+                  </a>
+              </li>
+              <li>
+                  <a href="#page5" data-transition="fade" data-theme="" data-icon="search">
+                      Location
+                  </a>
+              </li>
+              <li>
+                  <a href="#page6" data-transition="fade" data-theme="" data-icon="bars">
+                      More
+                  </a>
+              </li>
+          </ul>
+      </div>
+  </div>
+  <div data-role="page" data-control-title="Blank" id="page3" style="background: url('img/ios_default_bg_tile.jpg') repeat">
+      <div data-theme="" data-role="header">
+          <h3>
+              Home
+          </h3>
+      </div>
+      <div data-role="content">
+          <div style="" data-controltype="image">
+              <img style="width: 70px; height: 90px" src="img/logo.png">
+          </div>
+      </div>
+      <div data-role="tabbar" data-iconpos="top" data-theme="a">
+          <ul>
+              <li>
+                  <a href="#page1" data-transition="fade" data-theme="" data-icon="home">
+                      Home
+                  </a>
+              </li>
+              <li>
+                  <a href="#page4" data-transition="fade" data-theme="" data-icon="star">
+                      Services
+                  </a>
+              </li>
+              <li>
+                  <a href="#page5" data-transition="fade" data-theme="" data-icon="search">
+                      Location
+                  </a>
+              </li>
+              <li>
+                  <a href="#page6" data-transition="fade" data-theme="" data-icon="bars">
+                      More
+                  </a>
+              </li>
+          </ul>
+      </div>
+  </div>
+</body>
+</html>

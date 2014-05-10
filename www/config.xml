@@ -2,13 +2,13 @@
     <widget xmlns = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
 id = "com.codiqa.eterna"
-version = "1.00"
-versionCode = "1.00">
+version = "1.02"
+versionCode = "1.02">
 
     <name>Eterna</name>
 
     <description>
-        Eterna Salon & Day Spa - 1.00 - by Joseph Villella
+        Eterna Salon and Day Spa - 1.00 - by Joseph Villella
     </description>
 
     <author email="j_villella@live.ca">Joseph Villella</author>
